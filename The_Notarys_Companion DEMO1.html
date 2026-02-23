@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Notary's Companion | SA Notarial Practice Exam Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c9952a;
+    --gold-light: #f0c96b;
+    --cream: #faf6ee;
+    --coral: #e05c3a;
+    --sage: #4a7c59;
+    --lavender: #6b5ea8;
+    --warm-white: #fffdf7;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e8e0d0;
+    --card-shadow: 0 4px 24px rgba(26,39,68,0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── TOP NAV ─────────────────────────────────────────── */
+  .top-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-brand span { font-size: 1.5rem; }
+  .nav-links {
+    display: flex; gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-links button {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.65);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .nav-links button:hover, .nav-links button.active {
+    background: rgba(201,149,42,0.2);
+    color: var(--gold-light);
+  }
+
+  /* ── MAIN LAYOUT ─────────────────────────────────────── */
+  .main-content {
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .section-page {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+  .section-page.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HERO HEADERS ────────────────────────────────────── */
+  .section-hero {
+    padding: 4rem 3rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 600px;
+    font-weight: 300;
+  }
+  .hero-deco {
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    opacity: 0.06;
+  }
+
+  /* ── CONTENT GRID ────────────────────────────────────── */
+  .content-grid {
+    padding: 0 3rem 4rem;
+    max-width: 1400px;
+  }
+
+  /* ── CARDS ───────────────────────────────────────────── */
+  .card {
+    background: var(--warm-white);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .card-grid-2 { grid-template-columns: 1fr 1fr; }
+  .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  @media(max-width:768px) {
+    .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+    .content-grid, .section-hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+  }
+
+  /* ── NOTA CALLOUTS ───────────────────────────────────── */
+  .nota-callout {
+    background: linear-gradient(135deg, #fffbf0 0%, #fff8e8 100%);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .nota-face {
+    font-size: 2rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .nota-text { flex: 1; }
+  .nota-text strong {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .nota-text p { color: #3d3320; font-size: 0.92rem; }
+
+  /* ── WARNING / EXAM ALERT ────────────────────────────── */
+  .alert {
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: 0.88rem;
+    display: flex; gap: 0.75rem; align-items: flex-start;
+  }
+  .alert-icon { flex-shrink: 0; font-size: 1.1rem; }
+  .alert-danger { background: #fff0ee; border: 1px solid #f8c5bb; color: #7a2210; }
+  .alert-info { background: #eef4ff; border: 1px solid #c3d6f8; color: #1e3a6e; }
+  .alert-success { background: #edfaf3; border: 1px solid #b3e8cc; color: #144d2e; }
+  .alert-warning { background: #fffbea; border: 1px solid #f8e4a3; color: #5c4205; }
+
+  /* ── BADGES ──────────────────────────────────────────── */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .badge-navy { background: var(--navy); color: white; }
+  .badge-gold { background: var(--gold); color: white; }
+  .badge-coral { background: var(--coral); color: white; }
+  .badge-sage { background: var(--sage); color: white; }
+  .badge-lav { background: var(--lavender); color: white; }
+
+  /* ── DEFINITION CHIPS ────────────────────────────────── */
+  .def-list { list-style: none; }
+  .def-list li {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .def-list li:last-child { border-bottom: none; }
+  .def-term {
+    min-width: 180px;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.88rem;
+  }
+  .def-desc { color: #444; font-size: 0.88rem; line-height: 1.5; }
+
+  /* ── STEPS / PROCESS ─────────────────────────────────── */
+  .steps { list-style: none; }
+  .steps li {
+    display: flex; gap: 1rem;
+    margin-bottom: 1.1rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-blue { background: var(--navy); color: white; }
+  .step-gold { background: var(--gold); color: white; }
+  .step-coral { background: var(--coral); color: white; }
+  .step-sage { background: var(--sage); color: white; }
+  .step-text { font-size: 0.9rem; line-height: 1.6; color: #2a2a3a; }
+  .step-text strong { color: var(--navy); }
+
+  /* ── COMPARISON TABLE ────────────────────────────────── */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .comp-table th {
+    background: var(--navy);
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .comp-table th:first-child { border-radius: 8px 0 0 0; }
+  .comp-table th:last-child { border-radius: 0 8px 0 0; }
+  .comp-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: #333;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:nth-child(even) td { background: #faf8f4; }
+
+  /* ── HIGHLIGHT BOX ───────────────────────────────────── */
+  .highlight-box {
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .hb-navy { background: var(--navy); color: white; }
+  .hb-navy .hb-title { color: var(--gold-light); }
+  .hb-gold { background: #fffae8; border: 2px solid var(--gold); }
+  .hb-gold .hb-title { color: var(--gold); }
+  .hb-coral { background: #fff5f2; border: 2px solid var(--coral); }
+  .hb-coral .hb-title { color: var(--coral); }
+  .hb-sage { background: #edf7f1; border: 2px solid var(--sage); }
+  .hb-sage .hb-title { color: var(--sage); }
+  .hb-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  /* ── TIMELINE ────────────────────────────────────────── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.6rem;
+    top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .tl-title { font-weight: 600; color: var(--navy); font-size: 0.9rem; margin-bottom: 4px; }
+  .tl-desc { font-size: 0.85rem; color: #555; }
+
+  /* ── QUIZ SECTION ────────────────────────────────────── */
+  .quiz-card {
+    background: var(--warm-white);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+  }
+  .quiz-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .quiz-q .q-num {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+  }
+  .quiz-options { list-style: none; }
+  .quiz-options li {
+    padding: 0.65rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    transition: all 0.2s;
+    color: #333;
+  }
+  .quiz-options li:hover { border-color: var(--gold); background: #fffae8; }
+  .quiz-options li.correct { background: #edfaf3; border-color: var(--sage); color: #144d2e; font-weight: 600; }
+  .quiz-options li.wrong { background: #fff0ee; border-color: var(--coral); color: #7a2210; }
+  .quiz-reveal {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #eef4ff;
+    border-radius: 8px;
+    font-size: 0.87rem;
+    color: #1e3a6e;
+    line-height: 1.6;
+  }
+  .quiz-reveal.show { display: block; }
+  .scenario-box {
+    background: linear-gradient(135deg, var(--navy) 0%, #2d4070 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .scenario-box .scenario-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── MONOSPACE CODE ──────────────────────────────────── */
+  .formula {
+    font-family: 'DM Mono', monospace;
+    background: #1a2744;
+    color: #f0c96b;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin: 0.75rem 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+  }
+  .formula .comment { color: rgba(255,255,255,0.4); }
+  .formula .key { color: #6bcdf8; }
+  .formula .val { color: #a8e6b0; }
+
+  /* ── CHEAT SHEET ─────────────────────────────────────── */
+  .cheat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .cheat-tile {
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-size: 0.82rem;
+  }
+  .ct-navy { background: var(--navy); color: rgba(255,255,255,0.9); }
+  .ct-navy .ct-head { color: var(--gold-light); }
+  .ct-gold { background: #fffae8; border: 1.5px solid #e8c96b; }
+  .ct-gold .ct-head { color: #7a5a00; }
+  .ct-coral { background: #fff5f2; border: 1.5px solid #f8b8a8; }
+  .ct-coral .ct-head { color: #8a2210; }
+  .ct-sage { background: #edf7f1; border: 1.5px solid #8fd4aa; }
+  .ct-sage .ct-head { color: #1a4d30; }
+  .ct-lav { background: #f4f2fb; border: 1.5px solid #b8aae0; }
+  .ct-lav .ct-head { color: #3d2d80; }
+  .ct-head {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .ct-item {
+    display: flex; justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    gap: 0.5rem;
+  }
+  .ct-item:last-child { border-bottom: none; }
+  .ct-label { font-weight: 500; flex: 1; }
+  .ct-val { font-weight: 600; text-align: right; flex-shrink: 0; }
+
+  /* ── COVER PAGE ──────────────────────────────────────── */
+  .cover {
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(160deg, var(--navy) 0%, #2a3f6f 45%, #1a2744 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(201,149,42,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(107,94,168,0.12) 0%, transparent 50%);
+  }
+  .cover-inner {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 3rem;
+    max-width: 700px;
+  }
+  .cover-owl {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .cover-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 40%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cover-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .cover-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  .cover-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+  .cover-cta {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(201,149,42,0.35);
+  }
+  .cover-cta:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,149,42,0.45);
+  }
+  .cover-deco {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .deco1 { width: 500px; height: 500px; top: -150px; right: -150px; }
+  .deco2 { width: 300px; height: 300px; bottom: -80px; left: -80px; }
+  .deco3 { width: 200px; height: 200px; top: 30%; left: -60px; }
+
+  /* ── SECTION COLORS ──────────────────────────────────── */
+  .hero-anc { background: linear-gradient(135deg, #fffae8 0%, #fff5d5 100%); }
+  .hero-anc .hero-title { color: #5a3a00; }
+  .hero-bond { background: linear-gradient(135deg, #eef4ff 0%, #dce9ff 100%); }
+  .hero-bond .hero-title { color: var(--navy); }
+  .hero-lease { background: linear-gradient(135deg, #edf7f1 0%, #d5f0e0 100%); }
+  .hero-lease .hero-title { color: #1a4d30; }
+  .hero-serv { background: linear-gradient(135deg, #f4f2fb 0%, #e8e3f8 100%); }
+  .hero-serv .hero-title { color: #3d2d80; }
+  .hero-auth { background: linear-gradient(135deg, #fff5f2 0%, #ffe8e2 100%); }
+  .hero-auth .hero-title { color: #7a2210; }
+  .hero-poa { background: linear-gradient(135deg, #f0fafa 0%, #ddf3f3 100%); }
+  .hero-poa .hero-title { color: #0a3d3d; }
+  .hero-proc { background: linear-gradient(135deg, #fafafa 0%, #efefef 100%); }
+
+  /* ── ACCRUAL VISUAL ──────────────────────────────────── */
+  .accrual-visual {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .accrual-visual .av-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.5rem; }
+  .av-formula {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: white;
+    margin: 0.5rem 0;
+  }
+  .av-sub { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.25rem; }
+
+  /* ── REGIME CARDS ────────────────────────────────────── */
+  .regime-card {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+  }
+  .rc-head {
+    padding: 1.25rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+  }
+  .rc-body { padding: 1.25rem 1.5rem; background: var(--warm-white); }
+  .rc-item {
+    display: flex; gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.86rem;
+    color: #333;
+    align-items: flex-start;
+  }
+  .rc-item::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  .section-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── PROGRESS BAR ────────────────────────────────────── */
+  .progress-bar-wrap {
+    background: rgba(255,255,255,0.1);
+    height: 3px;
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    z-index: 99;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  /* ── SCROLL TO TOP ───────────────────────────────────── */
+  .scroll-top {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+    display: none;
+    z-index: 90;
+  }
+  .scroll-top:hover { background: var(--gold); transform: translateY(-2px); }
+
+  /* ── PILL TAGS ───────────────────────────────────────── */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 0.5rem 0; }
+  .pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .pill-light { background: rgba(26,39,68,0.08); color: var(--navy); }
+  .pill-gold { background: rgba(201,149,42,0.15); color: #7a5a00; }
+  .pill-coral { background: rgba(224,92,58,0.12); color: #8a2210; }
+  .pill-sage { background: rgba(74,124,89,0.12); color: #1a4d30; }
+
+  /* SEPARATOR */
+  .sep { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+  h3.sub { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin: 1.5rem 0 0.75rem; }
+  p.body-text { font-size: 0.9rem; line-height: 1.7; color: #333; margin-bottom: 0.75rem; }
+  ul.body-list { list-style: none; padding-left: 0; }
+  ul.body-list li { padding: 0.3rem 0 0.3rem 1.4rem; position: relative; font-size: 0.88rem; color: #333; }
+  ul.body-list li::before { content: '◆'; position: absolute; left: 0; color: var(--gold); font-size: 0.55rem; top: 0.55rem; }
+
+  /* ─────────────────────────────────────────────
+   MOBILE OPTIMISATION UPGRADE
+   ───────────────────────────────────────────── */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* True Mobile Improvements */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .section-hero {
+    padding: 2.2rem 1.2rem 1.6rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .content-grid {
+    padding: 0 1.2rem 2.5rem;
+  }
+
+  .card,
+  .quiz-card {
+    padding: 1.2rem;
+    border-radius: 14px;
+  }
+
+  .steps li {
+    margin-bottom: 0.9rem;
+  }
+
+  .def-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .def-term {
+    min-width: auto;
+  }
+
+  .accrual-visual > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .regime-card {
+    margin-bottom: 1rem;
+  }
+
+  .comp-table {
+    font-size: 0.8rem;
+  }
+
+  .comp-table th,
+  .comp-table td {
+    padding: 0.6rem;
+  }
+
+  .progress-bar-wrap {
+    display: none;
+  }
+
+  .scroll-top {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    bottom: 1.2rem;
+    right: 1.2rem;
+  }
+
+  /* Mobile Nav Layout */
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-links button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   DEMO / LOCKED CONTENT UI
+   ───────────────────────────────────────────── */
+
+.locked-overlay {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  margin: 1.5rem 0;
+  background: var(--warm-white);
+}
+
+.locked-overlay .locked-blur {
+  filter: blur(6px);
+  opacity: 0.9;
+  pointer-events: none;
+  user-select: none;
+}
+
+.locked-overlay .locked-message {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,39,68,0.88);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75rem;
+  text-align: center;
+  gap: 0.9rem;
+}
+
+.locked-message h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  margin: 0;
+  color: var(--gold-light);
+}
+
+.locked-message p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 520px;
+  color: rgba(255,255,255,0.85);
+}
+
+.locked-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 0.92rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.buy-btn:active { transform: scale(0.98); }
+
+.buy-btn-gumroad {
+  background: var(--gold);
+  color: white;
+  box-shadow: 0 6px 18px rgba(201,149,42,0.35);
+}
+
+.buy-btn-gumroad:hover {
+  background: var(--gold-light);
+  box-shadow: 0 10px 26px rgba(201,149,42,0.45);
+}
+
+.buy-btn-paystack {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
+.buy-btn-paystack:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.missing-outline {
+  margin-top: 1rem;
+  text-align: left;
+  width: min(820px, 100%);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 1rem 1rem 0.75rem;
+}
+
+.missing-outline .mo-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+}
+
+.missing-outline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.missing-outline li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.86);
+}
+
+.missing-outline li strong {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .locked-message h3 { font-size: 1.2rem; }
+  .buy-btn { width: 100%; max-width: 320px; }
+}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b1f3a">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <div class="nav-brand"><span>🦉</span> The Notary's Companion</div>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <div class="nav-links" id="navLinks">
+    <button class="active" onclick="showSection('cover')">Home</button>
+    <button onclick="showSection('intro')">The Notary</button>
+    <button onclick="showSection('anc')">ANCs</button>
+    <button onclick="showSection('bonds')">Notarial Bonds</button>
+    <button onclick="showSection('leases')">Long Leases</button>
+    <button onclick="showSection('servitudes')">Servitudes</button>
+    <button onclick="showSection('poa')">Powers of Attorney</button>
+    <button onclick="showSection('auth')">Authentication</button>
+    <button onclick="showSection('procedure')">Procedure</button>
+    <button onclick="showSection('cheatsheet')">Cheat Sheet</button>
+    <button onclick="showSection('quiz')">Practice Q's</button>
+  </div>
+</nav>
+
+<div class="progress-bar-wrap"><div class="progress-bar" id="pbar"></div></div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- MAIN -->
+<div class="main-content">
+
+<!-- ════════════════════════════════════════ COVER -->
+<section class="section-page active" id="cover">
+  <div class="cover">
+    <div class="cover-deco deco1"></div>
+    <div class="cover-deco deco2"></div>
+    <div class="cover-deco deco3"></div>
+    <div class="cover-inner">
+      <span class="cover-owl">🦉</span>
+      <p class="cover-eyebrow">South African Legal Practice</p>
+      <h1 class="cover-title">The Notary's<br>Companion</h1>
+      <p class="cover-sub">A complete study guide for the<br>Notarial Practice Examination</p>
+      <div class="cover-tags">
+        <span class="cover-tag">Antenuptial Contracts</span>
+        <span class="cover-tag">Notarial Bonds</span>
+        <span class="cover-tag">Long Leases</span>
+        <span class="cover-tag">Servitudes</span>
+        <span class="cover-tag">Powers of Attorney</span>
+        <span class="cover-tag">Authentication & Apostille</span>
+        <span class="cover-tag">Deeds Registration</span>
+      </div>
+      <button class="cover-cta" onclick="showSection('intro')">Begin Studying →</button>
+      <p style="margin-top:1.5rem;font-size:0.75rem;color:rgba(255,255,255,0.35);">Guided by Nota the Owl · All topics covered · Under 80 pages</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ INTRO -->
+<section class="section-page" id="intro">
+  <div class="section-hero" style="background: linear-gradient(135deg,#f5f3ff 0%,#ece8fa 100%);">
+    <p class="hero-tag">Chapter 1</p>
+    <h1 class="hero-title" style="color:#2d1f6e;">Who is a Notary?<br>The Role & the Rules</h1>
+    <p class="hero-subtitle">Before you can pass the exam, you need to understand the identity and authority of the professional you're becoming.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>Think of a Notary as a <em>specialist solicitor with a superpower</em>: only a Notary can authenticate and notarise documents that have legal effect beyond South Africa's borders, and only a Notary can execute certain high-stakes agreements like antenuptial contracts and notarial bonds. The public relies on our impartiality — we act for the <em>transaction</em>, not for one party.</p>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-title">🎓 Qualifications to Become a Notary</div>
+        <ol class="steps">
+          <li><span class="step-num step-blue">1</span><span class="step-text">Admitted as an <strong>attorney</strong> (LLB + 1 year practical)</span></li>
+          <li><span class="step-num step-blue">2</span><span class="step-text">Pass the <strong>Notarial Practice Examination</strong> set by the Legal Practice Council (LPC)</span></li>
+          <li><span class="step-num step-blue">3</span><span class="step-text">Apply for <strong>admission as a notary</strong> — court order required</span></li>
+          <li><span class="step-num step-blue">4</span><span class="step-text">Take the <strong>oath of office</strong> before a judge</span></li>
+          <li><span class="step-num step-blue">5</span><span class="step-text">Register your <strong>official signature and notarial seal</strong> with the LPC and the Registrar of Deeds</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <div class="card-title">⚖️ Governing Legislation</div>
+        <ul class="def-list">
+          <li><span class="def-term">Legal Practice Act 28/2014</span><span class="def-desc">Regulates all legal practitioners, including notaries</span></li>
+          <li><span class="def-term">Deeds Registries Act 47/1937</span><span class="def-desc">Governs registration of deeds and documents at Deeds Office</span></li>
+          <li><span class="def-term">Matrimonial Property Act 88/1984</span><span class="def-desc">Governs marital regimes and ANCs</span></li>
+          <li><span class="def-term">Security by Means of Movable Property Act 57/1993</span><span class="def-desc">Special Notarial Bonds</span></li>
+          <li><span class="def-term">Alienation of Land Act 68/1981</span><span class="def-desc">Land transactions including long leases</span></li>
+          <li><span class="def-term">Hague Convention on Apostille</span><span class="def-desc">SA acceded 2007; effective 2009</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📜 What Documents Can ONLY a Notary Execute?</div>
+      <div class="card-grid card-grid-3">
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Antenuptial Contracts</div>
+          <p style="font-size:0.82rem;color:#555;">Must be notarially executed before marriage and registered at Deeds Office within 3 months</p>
+        </div>
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Notarial Bonds</div>
+          <p style="font-size:0.82rem;color:#555;">Special and General Notarial Bonds over movable property — registered at Deeds Office</p>
+        </div>
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Long-term Leases</div>
+          <p style="font-size:0.82rem;color:#555;">Leases exceeding 10 years or for life — notarial execution + Deeds Office registration</p>
+        </div>
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Servitudes</div>
+          <p style="font-size:0.82rem;color:#555;">Personal and praedial servitudes created by agreement — notarial deed required</p>
+        </div>
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Authenticated Documents</div>
+          <p style="font-size:0.82rem;color:#555;">Documents for use abroad — apostille and authentication certificates</p>
+        </div>
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Certain POAs</div>
+          <p style="font-size:0.82rem;color:#555;">Notarial POAs required for immovable property transfers and certain company acts</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔏 The Notarial Seal & Protocol</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <h3 class="sub">The Seal</h3>
+          <p class="body-text">Every notary must have an official seal bearing their name and the words "Notary Public, Republic of South Africa". The seal must be impressed on all notarial deeds. <strong>No seal = document is void.</strong></p>
+          <div class="alert alert-danger">
+            <span class="alert-icon">⚠️</span>
+            <div><strong>Exam trap:</strong> A notarial deed without the notary's seal is <em>not merely irregular — it is null and void</em>. This is a common MCQ distractor.</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub">Protocol Book</h3>
+          <p class="body-text">Notaries must maintain a Protocol — a register of all notarial deeds executed. Original deeds remain in the protocol; parties receive certified copies (engrossments).</p>
+          <ul class="body-list">
+            <li>Protocol is numbered sequentially</li>
+            <li>Kept indefinitely — it is not your private property; it belongs to the state</li>
+            <li>On death/retirement, Protocol is handed to the Master of the High Court</li>
+            <li>Parties may request certified copies at any time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤝 Duties of a Notary — The Core Obligations</div>
+      <div class="card-grid card-grid-3">
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">Impartiality</div>
+          <p style="font-size:0.82rem;opacity:0.8;">A notary does not represent a party — they represent the law. You cannot notarise a deed where you have a personal interest, or where a close family member is a party.</p>
+        </div>
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">Verification</div>
+          <p style="font-size:0.82rem;opacity:0.8;">You must verify the identity of all parties, ensure they understand what they are signing, and confirm they are acting voluntarily and with full mental capacity.</p>
+        </div>
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">Confidentiality</div>
+          <p style="font-size:0.82rem;opacity:0.8;">Notarial instruments are public documents once registered — but the contents of advice and consultations remain privileged. Ethical rules of legal practice still apply.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 1: The Role & Rules</div>
+</section>
+
+<!-- ════════════════════════════════════════ ANCs -->
+<section class="section-page" id="anc">
+  <div class="section-hero hero-anc">
+    <p class="hero-tag">Chapter 2</p>
+    <h1 class="hero-title">Antenuptial Contracts<br><em style="font-size:0.6em;font-style:italic;">The Foundation of Matrimonial Property Law</em></h1>
+    <p class="hero-subtitle" style="color:#7a5a00;">The most tested topic in the Notarial Exam. Master the regimes, the formalities, and the accrual system cold.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>If two people want to marry and do NOT execute an ANC before the wedding — they are automatically married <em>in community of property</em>. There is no opting in; there is only opting OUT via an ANC. And that ANC window closes the moment they say "I do."</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🗺️ The Three Matrimonial Property Regimes</div>
+      <div class="card-grid card-grid-3">
+        <div class="regime-card">
+          <div class="rc-head" style="background:#1a2744;">In Community of Property<br><small style="font-weight:400;font-size:0.75rem;opacity:0.7;">DEFAULT — no ANC executed</small></div>
+          <div class="rc-body">
+            <div class="rc-item">One joint estate shared equally</div>
+            <div class="rc-item">Both spouses liable for all debts (joint and several)</div>
+            <div class="rc-item">Neither spouse can bind joint estate without consent of the other for certain transactions</div>
+            <div class="rc-item">Consent required: alienating/mortgaging immovable property, suretyship, credit agreements</div>
+            <div class="rc-item">Marital Power <em>abolished</em> — spouses are equal co-administrators</div>
+          </div>
+        </div>
+        <div class="regime-card">
+          <div class="rc-head" style="background:#c9952a;">Out of Community<br><small style="font-weight:400;font-size:0.75rem;opacity:0.9;">Without Accrual</small></div>
+          <div class="rc-body">
+            <div class="rc-item">Each spouse has their own separate estate</div>
+            <div class="rc-item">Each spouse solely responsible for their own debts</div>
+            <div class="rc-item">No sharing of assets at dissolution of marriage</div>
+            <div class="rc-item">Each spouse administers own estate freely</div>
+            <div class="rc-item">Simplest ANC — just states "out of community, without accrual"</div>
+          </div>
+        </div>
+        <div class="regime-card">
+          <div class="rc-head" style="background:#4a7c59;">Out of Community<br><small style="font-weight:400;font-size:0.75rem;opacity:0.9;">With Accrual</small></div>
+          <div class="rc-body">
+            <div class="rc-item">Separate estates during marriage</div>
+            <div class="rc-item">At dissolution: the spouse whose estate grew MORE shares the <em>accrual</em> with the other</div>
+            <div class="rc-item">Accrual = value of estate at dissolution MINUS commencement value</div>
+            <div class="rc-item">ANC must state commencement values</div>
+            <div class="rc-item">Most popular modern ANC — balances independence with fairness</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accrual-visual">
+      <p class="av-label">The Accrual Formula</p>
+      <div class="av-formula">Accrual Claim = ½ × (Accrual A − Accrual B)</div>
+      <p class="av-sub">Where Accrual X = Current Estate Value − Commencement Value (stated in ANC)</p>
+      <div style="margin-top:1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:left;">
+        <div style="background:rgba(255,255,255,0.08);padding:1rem;border-radius:8px;">
+          <p style="color:var(--gold-light);font-weight:600;font-size:0.8rem;margin-bottom:0.5rem;">EXAMPLE</p>
+          <p style="font-size:0.82rem;opacity:0.85;">Spouse A: starts at R100k, ends at R900k → Accrual = R800k<br>Spouse B: starts at R50k, ends at R150k → Accrual = R100k<br>Difference = R700k ÷ 2 = <strong style="color:var(--gold-light);">R350k claim</strong></p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);padding:1rem;border-radius:8px;">
+          <p style="color:var(--gold-light);font-weight:600;font-size:0.8rem;margin-bottom:0.5rem;">EXCLUDED FROM ACCRUAL</p>
+          <p style="font-size:0.82rem;opacity:0.85;">Inheritances & donations received during marriage (unless ANC says otherwise)<br>Damages for pain & suffering<br>Assets excluded by agreement in ANC</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📋 Formal Requirements for a Valid ANC</div>
+      <div class="alert alert-danger">
+        <span class="alert-icon">🚨</span>
+        <div><strong>Critical:</strong> ALL these requirements must be met. Failure of any one renders the ANC void — not voidable, but void.</div>
+      </div>
+      <ol class="steps">
+        <li><span class="step-num step-gold">1</span><span class="step-text"><strong>Before the marriage.</strong> The ANC must be concluded BEFORE the marriage ceremony. An ANC executed on the wedding day or after is invalid.</span></li>
+        <li><span class="step-num step-gold">2</span><span class="step-text"><strong>Notarial execution.</strong> The ANC must be executed before a Notary Public — not an attorney, commissioner of oaths, or any other official.</span></li>
+        <li><span class="step-num step-gold">3</span><span class="step-text"><strong>Two competent witnesses.</strong> The parties must sign in the presence of the notary AND two witnesses. The witnesses must be adults of sound mind.</span></li>
+        <li><span class="step-num step-gold">4</span><span class="step-text"><strong>Registration within 3 months.</strong> The ANC must be registered at the Deeds Office within 3 months of execution. <em>Failure to register does not invalidate the ANC between the parties</em>, but it will not bind third parties until registered.</span></li>
+        <li><span class="step-num step-gold">5</span><span class="step-text"><strong>Capacity of parties.</strong> Both parties must have legal capacity. Minors need parental/guardian consent. Interdicted persons cannot conclude an ANC without consent of their curator.</span></li>
+      </ol>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-title">👶 Minors Concluding ANCs</div>
+        <p class="body-text">A minor (under 18) may conclude an ANC but requires parental or guardian assistance. The assistant must co-sign the ANC. If the minor's parents are deceased or unfit, the Master of the High Court or a tutor may grant consent.</p>
+        <div class="alert alert-warning">
+          <span class="alert-icon">📌</span>
+          <div>A minor who marries without parental consent still has a valid marriage — but if they tried to conclude an ANC alone, the ANC is voidable (not void).</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">💡 Amending an ANC After Marriage?</div>
+        <p class="body-text">The matrimonial property regime is generally fixed once the marriage is concluded. However, post-nuptial changes are possible via a <strong>Section 21 application</strong> to the High Court (Matrimonial Property Act).</p>
+        <ol class="steps">
+          <li><span class="step-num step-blue">1</span><span class="step-text">Joint application by both spouses to High Court</span></li>
+          <li><span class="step-num step-blue">2</span><span class="step-text">Notice to all creditors (publication in Government Gazette)</span></li>
+          <li><span class="step-num step-blue">3</span><span class="step-text">Court must be satisfied regime change is justified and won't prejudice creditors</span></li>
+          <li><span class="step-num step-blue">4</span><span class="step-text">Court order notarially registered at Deeds Office</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚡ Exam Power Topics — ANC Edge Cases</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <h3 class="sub">The 3-Month Registration Gap</h3>
+          <p class="body-text">The ANC is valid between the parties from date of execution. But between execution and registration, third parties are NOT bound. Once registered, registration is retrospective to date of marriage. Third parties are bound from registration date.</p>
+          <div class="alert alert-info">
+            <span class="alert-icon">💡</span>
+            <div>An unregistered ANC is <em>not void</em> — it is enforceable inter partes. This is a favourite exam distinction.</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub">Forfeiture Clause</h3>
+          <p class="body-text">An ANC may contain a <strong>forfeiture clause</strong> — providing that a spouse who causes dissolution of the marriage through misconduct forfeits the benefits of the ANC (e.g., forfeits the accrual). Courts have discretion to enforce or set aside such clauses.</p>
+          <div class="alert alert-warning">
+            <span class="alert-icon">📌</span>
+            <div>Forfeiture clauses are valid but their enforcement is NOT automatic — the court decides based on fairness.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 2: Antenuptial Contracts</div>
+</section>
+
+<!-- ════════════════════════════════════════ BONDS -->
+<section class="section-page" id="bonds">
+  <div class="section-hero hero-bond">
+    <p class="hero-tag">Chapter 3</p>
+    <h1 class="hero-title">Notarial Bonds<br><em style="font-size:0.6em;font-style:italic;">Special vs General — The Great Divide</em></h1>
+    <p class="hero-subtitle">Notarial bonds are security instruments over movable property. The distinction between special and general bonds is tested relentlessly.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>Remember the golden rule: <strong>Specific = Real Right</strong>. A Special Notarial Bond identifies the property precisely and, once registered, creates a real right in rem (like a mortgage over land). A General Notarial Bond is a preference — not a real right — until the property is attached. This distinction decides everything: who wins when the debtor is sequestrated.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔍 SNB vs GNB — The Full Comparison</div>
+      <div style="overflow-x: auto;">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Special Notarial Bond (SNB)</th>
+              <th>General Notarial Bond (GNB)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Property identified?</strong></td><td>✅ Yes — specifically described</td><td>❌ No — general ("all movables")</td></tr>
+            <tr><td><strong>Type of security created</strong></td><td>Real right (jus in rem) — like a mortgage</td><td>Personal right / preference only</td></tr>
+            <tr><td><strong>Debtor keeps property?</strong></td><td>Yes, debtor usually retains possession</td><td>Yes — debtor retains all movables</td></tr>
+            <tr><td><strong>Governing legislation</strong></td><td>Security by Means of Movable Property Act 57/1993</td><td>Deeds Registries Act 47/1937</td></tr>
+            <tr><td><strong>Registration required?</strong></td><td>✅ Yes — Deeds Office</td><td>✅ Yes — Deeds Office</td></tr>
+            <tr><td><strong>On sequestration</strong></td><td>Ranked as secured creditor (like mortgagee)</td><td>Ranked as preferent creditor (not fully secured) until attachment</td></tr>
+            <tr><td><strong>Attachment needed?</strong></td><td>No — real right exists from registration</td><td>Yes — real right only on attachment by messenger of the court</td></tr>
+            <tr><td><strong>Typical use</strong></td><td>Specific plant/machinery, vehicles, stock</td><td>Stock in trade, fluctuating assets</td></tr>
+            <tr><td><strong>Possession required?</strong></td><td>No — notional possession concept</td><td>No</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-title">🏭 Special Notarial Bond — Deep Dive</div>
+        <h3 class="sub">Requirements for Validity</h3>
+        <ol class="steps">
+          <li><span class="step-num step-blue">1</span><span class="step-text"><strong>Notarial execution</strong> — executed before a Notary Public</span></li>
+          <li><span class="step-num step-blue">2</span><span class="step-text"><strong>Specific description</strong> of the property — must be identifiable and distinguishable from other property (e.g., vehicle VIN, machinery serial numbers, location of fixed equipment).</span></li>
+          <li><span class="step-num step-blue">3</span><span class="step-text"><strong>Registration</strong> at the Deeds Office in the relevant jurisdiction</span></li>
+          <li><span class="step-num step-blue">4</span><span class="step-text">Property must be <strong>movable</strong> — but can include things like vehicles, machinery, livestock</span></li>
+        </ol>
+        <div class="alert alert-danger">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Act 57/1993 key rule:</strong> The Act introduced "notional possession" — the creditor gets a real right WITHOUT taking physical possession. This overturned the common law rule that a pledge required delivery.</div>
+        </div>
+        <h3 class="sub">After‑Acquired Property</h3>
+        <p class="body-text">A SNB can cover property acquired after registration, provided the bond clearly states that it attaches to future assets of the same class. But the real right only arises once the debtor acquires the property.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">📦 General Notarial Bond — Deep Dive</div>
+        <h3 class="sub">How the GNB Works</h3>
+        <p class="body-text">The GNB covers all the debtor's movable property generally — it "floats" over the assets. It becomes fixed (crystallises) only when:</p>
+        <ul class="body-list">
+          <li>The debtor is sequestrated (personal insolvency) or liquidated (company)</li>
+          <li>The sheriff/messenger attaches the property at the bondholder's request</li>
+        </ul>
+        <div class="highlight-box hb-coral" style="margin-top:1rem;">
+          <div class="hb-title">Ranking on Insolvency</div>
+          <p style="font-size:0.83rem;color:#333;">1. Secured creditors (SNB holders, mortgage holders)<br>
+          2. <strong>GNB holders — preferent but not fully secured</strong><br>
+          3. Concurrent creditors (ordinary unsecured)<br><br>
+          <em>A GNB holder ranks above concurrent creditors but below SNB holders and mortgagees.</em></p>
+        </div>
+        <h3 class="sub">After‑Acquired Property</h3>
+        <p class="body-text">A GNB automatically covers after‑acquired property if the bond is worded to include "all movables now and hereafter owned". No further action needed.</p>
+        <div class="alert alert-warning">
+          <span class="alert-icon">📌</span>
+          <div><strong>Ranking conflict:</strong> If a debtor grants a SNB over a specific asset, then later a GNB covering all assets (including that same asset) is registered, which prevails? The SNB, being a real right, ranks first; the GNB holder has only a personal right in that asset until attachment.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📝 Drafting a Notarial Bond — Key Clauses</div>
+      <div class="formula">
+        <span class="comment">// MINIMUM CONTENTS OF A NOTARIAL BOND</span>
+        <br><br>
+        <span class="key">PARTIES:</span>      <span class="val">Full names, ID numbers, addresses, capacity</span><br>
+        <span class="key">RECITALS:</span>     <span class="val">Why the bond is being passed (underlying debt/cause)</span><br>
+        <span class="key">AMOUNT:</span>       <span class="val">Capital amount (plus interest rate + mora interest)</span><br>
+        <span class="key">PROPERTY:</span>     <span class="val">SNB: specific description with serial/ID numbers | GNB: "all movables"</span><br>
+        <span class="key">CONDITIONS:</span>   <span class="val">When capital is due; events of default; right to attach</span><br>
+        <span class="key">DOMICILE:</span>     <span class="val">Address for service of process (domicilium citandi)</span><br>
+        <span class="key">SIGNATURE:</span>    <span class="val">Notary + parties + 2 witnesses + notarial seal</span>
+      </div>
+      <div class="alert alert-info">
+        <span class="alert-icon">💡</span>
+        <div>The <strong>causa</strong> (reason for the debt) must appear in the bond. A bond that does not disclose the cause is suspicious and may be set aside as a disposition to defraud creditors.</div>
+      </div>
+      <h3 class="sub">Sample Property Schedule (SNB)</h3>
+      <div class="formula" style="background:#2a3f6f;">
+        <span class="comment">// SCHEDULE A – SPECIFIED MOVABLE ASSETS</span><br>
+        <span class="key">1.</span> <span class="val">One 2022 Toyota Hilux 2.8 GD-6 Double Cab, VIN: AHTFA8546789...</span><br>
+        <span class="key">2.</span> <span class="val">Model XYZ Lathe Machine, serial no. L2204-789, located at Unit 3, Industria</span><br>
+        <span class="key">3.</span> <span class="val">50 head of Bonsmara cattle, ear‑tag numbers 001–050</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 Classic Exam Scenarios</div>
+      <div class="card-grid card-grid-2">
+        <div class="scenario-box">
+          <div class="scenario-label">Scenario A</div>
+          <p>ABC Bank passes a notarial bond over Themba's manufacturing machines (specifically listed with serial numbers), registered at the Deeds Office. Themba is later sequestrated. Does ABC Bank have a real right?</p>
+          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(255,255,255,0.1);border-radius:8px;font-size:0.83rem;">
+            ✅ <strong>Yes</strong> — This is a Special Notarial Bond (specific description, Act 57/1993). ABC Bank has a real right from registration. They are a secured creditor and rank above the general body of creditors.
+          </div>
+        </div>
+        <div class="scenario-box">
+          <div class="scenario-label">Scenario B</div>
+          <p>FirstCapital Finance passes a general notarial bond over "all movable property of XYZ Trading (Pty) Ltd". XYZ is then placed under liquidation without prior attachment.</p>
+          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(255,255,255,0.1);border-radius:8px;font-size:0.83rem;">
+            ⚠️ <strong>Preferent only</strong> — This is a General Notarial Bond. Without prior attachment, no real right exists. FirstCapital ranks as a preferent creditor above concurrent creditors, but below secured creditors.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 3: Notarial Bonds</div>
+</section>
+
+<!-- ════════════════════════════════════════ LEASES -->
+<section class="section-page" id="leases">
+  <div class="section-hero hero-lease">
+    <p class="hero-tag">Chapter 4</p>
+    <h1 class="hero-title">Long-term Leases<br><em style="font-size:0.6em;font-style:italic;">When a Lease Becomes More Than a Contract</em></h1>
+    <p class="hero-subtitle">A lease of land exceeding 10 years — or for a person's lifetime — enters a different legal universe. Notarial execution and Deeds registration transform it into a real right.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>The key insight: a short lease (under 10 years) is <em>purely contractual</em> — it binds the parties but not third parties. A long lease (10+ years or for life), once notarially executed and registered, becomes a <strong>real right</strong>. This means: even if the landlord sells the land, the new owner is bound by the lease. <em>Huur gaat voor koop</em> — but only for registered long leases.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📅 The 10-Year Threshold — What Triggers Notarial Requirements</div>
+      <div class="card-grid card-grid-2">
+        <div class="highlight-box hb-sage">
+          <div class="hb-title">Leases Requiring Notarial Execution</div>
+          <ul class="body-list" style="margin-top:0.5rem;">
+            <li>Lease of land for a period <strong>exceeding 10 years</strong></li>
+            <li>Lease of land <strong>for the lifetime</strong> of the lessee or lessor</li>
+            <li>Lease <strong>renewable at the option of the lessee</strong> such that the total period may exceed 10 years</li>
+            <li>Lease subject to a <strong>right of pre-emption / right to purchase</strong></li>
+          </ul>
+        </div>
+        <div class="highlight-box hb-coral">
+          <div class="hb-title">What Happens Without Registration?</div>
+          <p style="font-size:0.83rem;color:#333;">An unregistered long lease is valid between the parties (landlord and tenant). But it does NOT bind a third party who purchases the land. The new owner can evict the tenant despite the lease. Registration = real right = "follows the land."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📋 Formal Requirements for a Long Lease</div>
+      <ol class="steps">
+        <li><span class="step-num step-sage">1</span><span class="step-text"><strong>Notarial execution.</strong> The lease must be prepared and executed before a Notary Public. Both parties sign in the presence of the notary and two witnesses.</span></li>
+        <li><span class="step-num step-sage">2</span><span class="step-text"><strong>Registration at Deeds Office.</strong> The notarial lease must be lodged for registration. It is endorsed on (registered against) the title deed of the property.</span></li>
+        <li><span class="step-num step-sage">3</span><span class="step-text"><strong>Consent of mortgagee.</strong> If the property is mortgaged, the bank/mortgage holder must consent to the registration of the lease — otherwise, the mortgagee's rights may be prejudiced.</span></li>
+        <li><span class="step-num step-sage">4</span><span class="step-text"><strong>Description of property.</strong> The Erf/farm number, extent, and title deed reference must be precisely stated. A description that cannot be found in the Deeds Office will be rejected.</span></li>
+        <li><span class="step-num step-sage">5</span><span class="step-text"><strong>Material terms.</strong> Rental amount, period (start and end dates or duration), renewal options, escalation clauses, and permitted use must all be clearly stated.</span></li>
+      </ol>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-title">💼 Key Contents of a Long Lease Deed</div>
+        <div class="formula">
+<span class="key">PARTIES:</span>    <span class="val">Lessor & Lessee (IDs, capacity)</span>
+<span class="key">PROPERTY:</span>   <span class="val">Full title reference, Erf/farm no.</span>
+<span class="key">PERIOD:</span>     <span class="val">Commencement + duration or end date</span>
+<span class="key">RENTAL:</span>     <span class="val">Amount, frequency, escalation %</span>
+<span class="key">RENEWALS:</span>   <span class="val">Options & mechanism</span>
+<span class="key">USE:</span>        <span class="val">Permitted purpose</span>
+<span class="key">IMPROVEMENTS:</span> <span class="val">Who pays; removal rights</span>
+<span class="key">DOMICILE:</span>   <span class="val">Addresses for legal service</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚖️ Rights of Parties — Long Lease</div>
+        <h3 class="sub">Lessee's Rights (once registered)</h3>
+        <ul class="body-list">
+          <li>Real right to occupy and use the land</li>
+          <li>Right to sublease (unless prohibited by lease)</li>
+          <li>Protected against sale of the property — new owner must honour the lease</li>
+          <li>Can mortgage the leasehold right</li>
+        </ul>
+        <h3 class="sub">Lessor's Rights</h3>
+        <ul class="body-list">
+          <li>Rental payment enforceable as a real right condition</li>
+          <li>Right to cancel for breach (subject to notice)</li>
+          <li>Reversionary right at end of lease</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔄 Renewal Options & Exam Traps</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <div class="alert alert-danger">
+            <span class="alert-icon">🚨</span>
+            <div><strong>Trap 1:</strong> A 9-year lease with an option to renew for another 5 years (total 14 years) must be notarially executed from the start — the potential total period exceeds 10 years.</div>
+          </div>
+          <div class="alert alert-danger">
+            <span class="alert-icon">🚨</span>
+            <div><strong>Trap 2:</strong> A lease "for the life of the lessee" must be notarially executed even if the person is 75 years old — the duration is potentially uncertain.</div>
+          </div>
+        </div>
+        <div>
+          <div class="alert alert-success">
+            <span class="alert-icon">✅</span>
+            <div><strong>Key principle:</strong> "Huur gaat voor koop" (lease goes before sale) — a registered long lease is NOT terminated by the sale of the leased property. The purchaser takes subject to the lease.</div>
+          </div>
+          <div class="alert alert-info">
+            <span class="alert-icon">💡</span>
+            <div>Cancellation of a registered lease must also be notarially executed and registered against the title deed to be effective against third parties.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏦 Consent of Bondholder</div>
+      <p class="body-text">If the leased property is bonded, the mortgagee's written consent is an absolute requirement for registration of the long lease. Without it, the Deeds Office will reject the lodgement. This protects the bank's security — the lease could otherwise diminish the value of the property.</p>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 4: Long-term Leases</div>
+</section>
+
+<!-- ════════════════════════════════════════ SERVITUDES -->
+<section class="section-page" id="servitudes">
+  <div class="section-hero hero-serv">
+    <p class="hero-tag">Chapter 5</p>
+    <h1 class="hero-title">Servitudes<br><em style="font-size:0.6em;font-style:italic;">Rights That Run With the Land</em></h1>
+    <p class="hero-subtitle">Servitudes are real rights limiting the use of property for the benefit of another. Understand the taxonomy, the requirements, and the ways they are created and terminated.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>The root word is <em>servire</em> — "to serve." A servitude is a burden on one property (or person) serving another. The classic mental model: your neighbour's land is burdened with your right of way across it. Their land <em>serves</em> yours. Master the praedial vs personal divide and you've cracked 80% of servitude questions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🗂️ Classification of Servitudes</div>
+      <div class="card-grid card-grid-2">
+        <div class="regime-card">
+          <div class="rc-head" style="background:#6b5ea8;">PRAEDIAL SERVITUDES<br><small style="opacity:0.75;font-weight:400;font-size:0.75rem;">Attached to land — benefits a piece of land</small></div>
+          <div class="rc-body">
+            <div class="rc-item">The right benefits the <strong>dominant tenement</strong> (the property being served FOR)</div>
+            <div class="rc-item">The burden rests on the <strong>servient tenement</strong> (the property being burdened)</div>
+            <div class="rc-item">Runs with the land — transfers with ownership automatically</div>
+            <div class="rc-item"><strong>Examples:</strong> Right of way (via), right to draw water (aquaeductus), right to graze (pastus), right to light, right of support</div>
+            <div class="rc-item">Must be: <em>praedio praedioque utilis</em> — the servitude must benefit the dominant tenement, not just the owner personally</div>
+          </div>
+        </div>
+        <div class="regime-card">
+          <div class="rc-head" style="background:#4a7c59;">PERSONAL SERVITUDES<br><small style="opacity:0.75;font-weight:400;font-size:0.75rem;">Attached to a person — benefits a specific individual</small></div>
+          <div class="rc-body">
+            <div class="rc-item">Benefits a <strong>specific person</strong> — not a property</div>
+            <div class="rc-item">Terminates on death of the beneficiary (or end of specified period)</div>
+            <div class="rc-item">NOT transferable or heritable</div>
+            <div class="rc-item"><strong>Usufruct:</strong> Right to use AND enjoy fruits of another's property</div>
+            <div class="rc-item"><strong>Usus:</strong> Right to use only (no right to take fruits for commercial purposes)</div>
+            <div class="rc-item"><strong>Habitatio:</strong> Right to dwell in a building</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">➕➖ Positive vs Negative Servitudes</div>
+      <div class="card-grid card-grid-2">
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Positive Servitudes</div>
+          <p style="font-size:0.83rem;color:#333;">Allow the holder to do something on the servient land (e.g., walk across it, draw water). The servient owner must <em>tolerate</em> the activity.</p>
+        </div>
+        <div class="highlight-box hb-gold">
+          <div class="hb-title">Negative Servitudes</div>
+          <p style="font-size:0.83rem;color:#333;">Prevent the servient owner from doing something they would otherwise be entitled to (e.g., building above a certain height, blocking light). The servient owner must <em>refrain</em> from acting.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏛️ Usufruct — The Most Important Personal Servitude</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <h3 class="sub">Rights of a Usufructuary</h3>
+          <ul class="body-list">
+            <li>Use the property (occupy it, use it for its purpose)</li>
+            <li>Enjoy the fruits — natural fruits (crops, animals) and civil fruits (rental income)</li>
+            <li>Let the property to third parties</li>
+            <li>Mortgage the usufruct right (not the property itself)</li>
+          </ul>
+          <h3 class="sub">Duties of a Usufructuary</h3>
+          <ul class="body-list">
+            <li>Take a <strong>cautio usufructuaria</strong> (inventory + bond to the owner)</li>
+            <li>Maintain the property — keep it in good repair</li>
+            <li>Pay ordinary rates, taxes, and maintenance costs</li>
+            <li>Return the property in the same condition at end of usufruct</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub">Termination of Usufruct</h3>
+          <ul class="body-list">
+            <li>Death of the usufructuary</li>
+            <li>Expiry of the period for which it was granted</li>
+            <li>Merger — usufructuary becomes owner of the property</li>
+            <li>Renunciation by usufructuary</li>
+            <li>Destruction or loss of the thing</li>
+            <li>Prescription (non-use for 30 years)</li>
+          </ul>
+          <div class="alert alert-warning">
+            <span class="alert-icon">📌</span>
+            <div>A usufruct cannot be transferred to another person. The usufructuary may <em>exercise</em> the right through others (eg, lease), but the usufruct itself is personal and inalienable.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📋 Creating a Servitude — The Notarial Requirements</div>
+      <ol class="steps">
+        <li><span class="step-num step-lav" style="background:#6b5ea8;">1</span><span class="step-text"><strong>Notarial deed.</strong> All servitudes created by agreement must be in a notarial deed signed by the parties before a Notary Public with two witnesses.</span></li>
+        <li><span class="step-num step-lav" style="background:#6b5ea8;">2</span><span class="step-text"><strong>Registration at Deeds Office.</strong> The servitude must be registered against BOTH the dominant and servient title deeds (for praedial) or against the property title (for personal).</span></li>
+        <li><span class="step-num step-lav" style="background:#6b5ea8;">3</span><span class="step-text"><strong>Clear description.</strong> The nature, extent, and location of the servitude must be clearly described. For a right of way: width, route, start/end points. Diagrams can be attached.</span></li>
+        <li><span class="step-num step-lav" style="background:#6b5ea8;">4</span><span class="step-text"><strong>Consent of bondholder.</strong> If the servient tenement is mortgaged, the mortgagee's written consent is required for registration.</span></li>
+      </ol>
+      <div class="alert alert-info">
+        <span class="alert-icon">💡</span>
+        <div><strong>Other ways a servitude can arise</strong> (without notarial deed): <em>Prescription</em> (30 years uninterrupted use, openly, as of right), <em>destination of paterfamilias</em> (arising when subdivision of property occurs and the situation requires a servitude), <em>testamentary disposition</em>.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔑 Requirements for a Valid Praedial Servitude</div>
+      <div class="card-grid card-grid-2">
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">1. Praedio Praedioque Utilis</div>
+          <p style="font-size:0.82rem;opacity:0.8;">The servitude must benefit the dominant tenement (the land) — not merely the owner personally. If neighbour A gets a right of way not because it benefits their land but because it's convenient for them personally, it may be a personal servitude or invalid praedial.</p>
+        </div>
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">2. Tenements Must Be Neighbouring</div>
+          <p style="font-size:0.82rem;opacity:0.8;">The dominant and servient properties must be in reasonable proximity. They need not share a boundary, but a right of way over property in a different town for land in another province would be suspect.</p>
+        </div>
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">3. Servitude Must Be Possible</div>
+          <p style="font-size:0.82rem;opacity:0.8;">The right must be physically and legally capable of being exercised. A servitude of obstruction (forcing the owner to do nothing) is valid. A servitude requiring active positive conduct (facere) from the owner is generally not allowed.</p>
+        </div>
+        <div class="highlight-box hb-navy">
+          <div class="hb-title">4. Civiliter Modo Exercise</div>
+          <p style="font-size:0.82rem;opacity:0.8;">The beneficiary must exercise the servitude in a civilised manner — causing the least possible inconvenience to the owner of the servient tenement. The servitude cannot be extended beyond its original scope.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏞️ Public Servitudes</div>
+      <p class="body-text">Created by statute or government action (e.g., servitudes for roads, railways, power lines, municipal water pipes). They are not created by notarial deed but by legislation or expropriation. They benefit the public at large, not a specific person or piece of land.</p>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 5: Servitudes</div>
+</section>
+
+<!-- ════════════════════════════════════════ POA -->
+<section class="section-page" id="poa">
+  <div class="section-hero hero-poa">
+    <p class="hero-tag">Chapter 6</p>
+    <h1 class="hero-title">Powers of Attorney<br><em style="font-size:0.6em;font-style:italic;">Authority to Act in Another's Name</em></h1>
+    <p class="hero-subtitle">When a notarial power of attorney is required, what it must contain, and when it expires.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>A power of attorney (POA) authorises an agent to act on behalf of a principal. Not all POAs need a notary — but when the act being authorised requires notarial form (like executing an ANC, transferring property, or registering a bond), the POA authorising it must ALSO be notarial. Follow the chain of formality.</p>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-title">📜 When is a NOTARIAL POA Required?</div>
+        <ul class="def-list">
+          <li><span class="def-term">Transfer of immovable property</span><span class="def-desc">Signing a transfer deed (power of attorney to pass transfer) must be notarial if executed abroad</span></li>
+          <li><span class="def-term">Signing an ANC</span><span class="def-desc">An agent signing an ANC on behalf of a party needs a notarial POA</span></li>
+          <li><span class="def-term">POA executed abroad</span><span class="def-desc">Any POA to be used in South Africa for registration purposes, if executed outside SA, must be notarially executed and apostilled</span></li>
+          <li><span class="def-term">Mortgage bonds</span><span class="def-desc">Agent signing a mortgage bond must have a notarial POA</span></li>
+          <li><span class="def-term">Company resolutions</span><span class="def-desc">Some company resolutions authorising property transactions require notarial certification</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">⚡ Key Rules for POAs</div>
+        <h3 class="sub">1. Capacity of the Principal</h3>
+        <p class="body-text">The principal must have legal capacity at the time the POA is signed AND at the time the agent exercises it. A POA signed by someone who later becomes mentally incapacitated is automatically revoked by operation of law.</p>
+        <h3 class="sub">2. Specific vs General</h3>
+        <ul class="body-list">
+          <li><strong>Specific POA</strong>: Authorises one specific act (e.g., "to sign transfer deed for Erf 123")</li>
+          <li><strong>General POA</strong>: Broad authority for multiple acts — used with caution</li>
+        </ul>
+        <h3 class="sub">3. Termination</h3>
+        <ul class="body-list">
+          <li>Death of principal or agent</li>
+          <li>Mental incapacity of principal</li>
+          <li>Insolvency of principal</li>
+          <li>Revocation (must be communicated to agent)</li>
+          <li>Completion of the act authorised</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔁 Advanced POA Concepts</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <h3 class="sub">Ratification</h3>
+          <p class="body-text">If an agent acts without authority, the principal may ratify the act. Ratification must comply with the same formalities as the original act — so if the act required notarial execution, ratification must also be notarial.</p>
+        </div>
+        <div>
+          <h3 class="sub">Durable (Enduring) POA</h3>
+          <p class="body-text">At common law, mental incapacity automatically revokes a POA. A "durable" POA specifically states that it survives incapacity. However, for property transactions, the Master of the High Court may still need to be involved. Not commonly used in SA, but worth knowing.</p>
+        </div>
+        <div>
+          <h3 class="sub">Stipulatio Alteri</h3>
+          <p class="body-text">A contract for the benefit of a third party. A POA can be used to accept such a benefit on behalf of the third party. The acceptance must be notarial if the underlying contract required notarial form.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🌍 POAs Executed Abroad</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <ol class="steps">
+            <li><span class="step-num step-sage">1</span><span class="step-text">POA is executed before a <strong>foreign Notary Public</strong> in the country where the principal is located</span></li>
+            <li><span class="step-num step-sage">2</span><span class="step-text">If the foreign country is a <strong>Hague Convention country</strong>: the POA receives an <strong>Apostille</strong> — no further legalisation needed</span></li>
+            <li><span class="step-num step-sage">3</span><span class="step-text">If the foreign country is <strong>NOT</strong> a Hague Convention country: the POA must be authenticated by the SA Embassy/Consulate or DIRCO in SA</span></li>
+            <li><span class="step-num step-sage">4</span><span class="step-text">The Deeds Office may require a <strong>sworn translation</strong> if the POA is not in an official SA language</span></li>
+          </ol>
+        </div>
+        <div class="highlight-box hb-sage">
+          <div class="hb-title">Deeds Office Requirements</div>
+          <p style="font-size:0.83rem;color:#333;margin-bottom:0.75rem;">A foreign POA lodged at the Deeds Office must be accompanied by:</p>
+          <ul style="list-style:none;font-size:0.82rem;color:#333;">
+            <li style="padding:4px 0;">✅ The apostille or authentication certificate</li>
+            <li style="padding:4px 0;">✅ A certified sworn translation (if required)</li>
+            <li style="padding:4px 0;">✅ A certificate by a local notary confirming the foreign notary's status (in some cases)</li>
+            <li style="padding:4px 0;">✅ The original POA or a certified copy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 6: Powers of Attorney</div>
+</section>
+
+<!-- ════════════════════════════════════════ AUTHENTICATION -->
+<section class="section-page" id="auth">
+  <div class="section-hero hero-auth">
+    <p class="hero-tag">Chapter 7</p>
+    <h1 class="hero-title">Authentication<br>& the Apostille<br><em style="font-size:0.55em;font-style:italic;">Crossing Borders with Legal Documents</em></h1>
+    <p class="hero-subtitle">When a South African document must work in another country, or a foreign document must be accepted here — authentication or apostille makes it happen.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>The Apostille is the fast lane. If both countries are on the Hague Convention list, you get an apostille from the designated authority and you're done. If not, you're in the slow lane of full authentication — notary → government authentication → SA Embassy. Know the difference and you'll ace these questions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🌐 The Two Pathways</div>
+      <div class="card-grid card-grid-2">
+        <div class="regime-card">
+          <div class="rc-head" style="background:#e05c3a;">PATH A: FULL AUTHENTICATION<br><small style="font-weight:400;font-size:0.75rem;opacity:0.8;">For non-Hague Convention countries</small></div>
+          <div class="rc-body">
+            <div class="rc-item">Document executed before local notary</div>
+            <div class="rc-item">Verified by relevant government department (e.g., Department of Justice)</div>
+            <div class="rc-item">Authenticated by DIRCO (Department of International Relations & Cooperation)</div>
+            <div class="rc-item">Legalised by SA Embassy or Consulate in the foreign country (if needed)</div>
+            <div class="rc-item"><strong>Time-consuming and expensive</strong></div>
+          </div>
+        </div>
+        <div class="regime-card">
+          <div class="rc-head" style="background:#4a7c59;">PATH B: APOSTILLE<br><small style="font-weight:400;font-size:0.75rem;opacity:0.8;">Hague Convention of 5 Oct 1961 — SA joined 2009</small></div>
+          <div class="rc-body">
+            <div class="rc-item">Document executed before local notary (or relevant official)</div>
+            <div class="rc-item">Apostille affixed by the designated competent authority</div>
+            <div class="rc-item">In SA: DIRCO (Pretoria) is the competent authority</div>
+            <div class="rc-item">Single certificate recognises the document in ALL Hague Convention countries</div>
+            <div class="rc-item"><strong>No further legalisation required</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🧭 Chain Authentication for Non‑Hague Countries</div>
+      <div class="steps" style="margin-left:0;">
+        <li><span class="step-num step-coral">1</span><span class="step-text"><strong>Notary</strong> executes/certifies the document.</span></li>
+        <li><span class="step-num step-coral">2</span><span class="step-text"><strong>High Court / State Law Advisor</strong> (or relevant authority) verifies the notary's signature.</span></li>
+        <li><span class="step-num step-coral">3</span><span class="step-text"><strong>DIRCO</strong> authenticates the High Court's signature.</span></li>
+        <li><span class="step-num step-coral">4</span><span class="step-text"><strong>Embassy/Consulate</strong> of the destination country legalises the document.</span></li>
+      </div>
+      <p class="body-text" style="margin-top:1rem;">This process is required for countries like Saudi Arabia, United Arab Emirates (until recently), and some African states that are not party to the Hague Convention.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📄 What is an Apostille?</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <p class="body-text">An Apostille is a standardised certificate — its format is prescribed by the Hague Convention. It is attached to (or incorporated in) a public document and certifies the authenticity of the signature, the capacity of the signatory, and the seal or stamp on the document.</p>
+          <div class="formula">
+<span class="comment">// REQUIRED CONTENTS OF APOSTILLE (Article 4, Hague Conv.)</span>
+<span class="key">Title:</span>       <span class="val">"APOSTILLE" (Convention de La Haye...)</span>
+<span class="key">Country:</span>    <span class="val">Country of origin</span>
+<span class="key">Signatory:</span>  <span class="val">Name of person who signed document</span>
+<span class="key">Capacity:</span>   <span class="val">The capacity in which they acted</span>
+<span class="key">Seal:</span>       <span class="val">Name of authority whose seal is on document</span>
+<span class="key">Date:</span>       <span class="val">Date of certification</span>
+<span class="key">Authority:</span>  <span class="val">Certifying authority name</span>
+<span class="key">Number:</span>     <span class="val">Apostille serial number</span>
+<span class="key">Stamp/Sig:</span> <span class="val">Signature and stamp of certifying authority</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub">Documents That Can Receive an Apostille</h3>
+          <ul class="body-list">
+            <li>Documents executed by judicial authority (court orders, judgments)</li>
+            <li>Administrative documents (birth, death, marriage certificates)</li>
+            <li>Notarial deeds and certificates</li>
+            <li>Official certificates on private documents (notarial certifications)</li>
+          </ul>
+          <div class="alert alert-danger">
+            <span class="alert-icon">⚠️</span>
+            <div><strong>Cannot apostille:</strong> Documents executed by diplomatic or consular agents, and administrative documents directly relating to commercial or customs operations — these have their own procedures.</div>
+          </div>
+          <div class="alert alert-success">
+            <span class="alert-icon">✅</span>
+            <div>SA became a member of the Hague Apostille Convention on <strong>5 August 2009</strong>. This is a frequently tested date.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔄 Notarising & Certifying Documents for Foreign Use</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <h3 class="sub">Notarial Certificate of True Copy</h3>
+          <p class="body-text">A notary can certify that a copy of a document is a true and correct copy of the original. The notary must sight the original and compare it with the copy. The certificate is then apostilled if needed for foreign use.</p>
+          <h3 class="sub">Notarial Certificate of Authenticity</h3>
+          <p class="body-text">The notary certifies the authenticity of a signature — confirming that the named person signed in the notary's presence and was identified. Used for private documents (contracts, affidavits).</p>
+        </div>
+        <div>
+          <h3 class="sub">Common Use Cases</h3>
+          <ul class="def-list">
+            <li><span class="def-term">Study abroad</span><span class="def-desc">Degree certificates and academic transcripts notarised + apostilled</span></li>
+            <li><span class="def-term">Immigration</span><span class="def-desc">Birth certificates, marriage certificates, police clearances</span></li>
+            <li><span class="def-term">International contracts</span><span class="def-desc">Powers of attorney, affidavits to be used in foreign courts</span></li>
+            <li><span class="def-term">Company registration abroad</span><span class="def-desc">SA company documents for foreign subsidiaries</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 7: Authentication & Apostille</div>
+</section>
+
+<!-- ════════════════════════════════════════ PROCEDURE -->
+<section class="section-page" id="procedure">
+  <div class="section-hero hero-proc">
+    <p class="hero-tag">Chapter 8</p>
+    <h1 class="hero-title">Notarial Practice<br>& Procedure</h1>
+    <p class="hero-subtitle">The practical mechanics: how to execute a notarial deed, Deeds Office procedures, and the rules that govern day-to-day practice.</p>
+  </div>
+  <div class="content-grid">
+    <div class="nota-callout">
+      <span class="nota-face">🦉</span>
+      <div class="nota-text">
+        <strong>Nota Says</strong>
+        <p>Execution is where the rubber meets the road. A deed with beautiful content but flawed execution is worthless. The exam tests whether you know EXACTLY what must happen at the signing table — who must be present, in what order things are signed, and what happens if something goes wrong.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🖊️ Execution of a Notarial Deed — Step by Step</div>
+      <ol class="steps">
+        <li><span class="step-num step-gold">1</span><span class="step-text"><strong>Identification of parties.</strong> The notary must sight original identity documents (SA ID, passport). The notary records the ID numbers in the deed and satisfies themselves of each party's identity.</span></li>
+        <li><span class="step-num step-gold">2</span><span class="step-text"><strong>Reading of the deed.</strong> The notary must read the deed aloud to the parties, OR confirm the parties have read it and understood it. The deed must be in a language the parties understand.</span></li>
+        <li><span class="step-num step-gold">3</span><span class="step-text"><strong>Acknowledgement of understanding.</strong> The notary must confirm each party understands the nature and effect of the document and signs freely and voluntarily.</span></li>
+        <li><span class="step-num step-gold">4</span><span class="step-text"><strong>Signing.</strong> Parties sign every page (or in the margin) and sign and initial the final page. All signatures must be made in the physical presence of the notary.</span></li>
+        <li><span class="step-num step-gold">5</span><span class="step-text"><strong>Witness signatures.</strong> Two competent witnesses sign and their details (name, ID number, address) are recorded in the attestation clause.</span></li>
+        <li><span class="step-num step-gold">6</span><span class="step-text"><strong>Notary signs and seals.</strong> The notary signs and impresses their official seal. The date and place of execution are recorded in the attestation clause.</span></li>
+        <li><span class="step-num step-gold">7</span><span class="step-text"><strong>Protocol entry.</strong> The original is filed in the notary's protocol under a sequential number. The parties receive certified copies (engrossments).</span></li>
+        <li><span class="step-num step-gold">8</span><span class="step-text"><strong>Registration (where required).</strong> The deed (or certified copy thereof) is lodged at the Deeds Office for registration within the prescribed time limits.</span></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🧑‍⚖️ Capacity of Parties — Who Can Sign?</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <h3 class="sub">Natural Persons</h3>
+          <ul class="body-list">
+            <li><strong>Minors:</strong> Need assistance from parent/guardian. The assistant must also sign the deed.</li>
+            <li><strong>Insolvents:</strong> May not enter into certain deeds without consent of the trustee.</li>
+            <li><strong>Persons under curatorship:</strong> Require curator's consent and co‑signature.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub">Legal Persons</h3>
+          <ul class="body-list">
+            <li><strong>Companies:</strong> Must act through a duly authorised representative. A resolution of the board is required, and often a notarial POA.</li>
+            <li><strong>Trusts:</strong> All trustees must act jointly unless the trust deed provides otherwise. A resolution and proof of authority (e.g., letter of authority from Master) must be lodged.</li>
+            <li><strong>Partnerships:</strong> All partners must sign unless one partner is specifically authorised by the others in writing.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert alert-info">
+        <span class="alert-icon">📌</span>
+        <div>Always verify authority documents: company resolutions, trust deeds, letters of authority. Without them, the deed may be invalid.</div>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-title">🏛️ The Deeds Office — Key Facts</div>
+        <ul class="def-list">
+          <li><span class="def-term">Function</span><span class="def-desc">Registers all real rights in immovable property and certain rights in movable property</span></li>
+          <li><span class="def-term">Examiner of Deeds</span><span class="def-desc">An official who checks deeds for compliance before registration — can raise "conditions" (objections)</span></li>
+          <li><span class="def-term">Lodgement</span><span class="def-desc">Documents are lodged as a "batch" — all interconnected documents lodge together</span></li>
+          <li><span class="def-term">Simultaneous registration</span><span class="def-desc">Linked transactions register simultaneously (e.g., transfer + bond)</span></li>
+          <li><span class="def-term">Priority</span><span class="def-desc">Registration priority determined by lodgement order — "first lodged, first registered"</span></li>
+          <li><span class="def-term">Deeds search</span><span class="def-desc">The Deeds Register is a public register — anyone can search it</span></li>
+          <li><span class="def-term">eDeeds</span><span class="def-desc">The Deeds Office is moving toward electronic lodgement and registration. While not fully implemented, knowledge of the transition may be tested.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">⏰ Critical Time Limits</div>
+        <div class="cheat-grid" style="grid-template-columns:1fr;">
+          <div class="cheat-tile ct-gold">
+            <div class="ct-head">Registration Deadlines</div>
+            <div class="ct-item"><span class="ct-label">ANC registration</span><span class="ct-val">3 months from execution</span></div>
+            <div class="ct-item"><span class="ct-label">Long lease</span><span class="ct-val">No statutory limit — but ASAP</span></div>
+            <div class="ct-item"><span class="ct-label">Notarial bond</span><span class="ct-val">No statutory limit — but ASAP (priority by lodgement)</span></div>
+            <div class="ct-item"><span class="ct-label">Transfer of property</span><span class="ct-val">No limit but rates clearance expires 60 days</span></div>
+            <div class="ct-item"><span class="ct-label">Prescription</span><span class="ct-val">Rights prescribe after 3 years (generally) or 30 years (real rights)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">✍️ Attestation Clause — The Anatomy</div>
+      <p class="body-text">The attestation clause is the section at the end of every notarial deed that confirms proper execution. It must contain:</p>
+      <div class="formula">
+<span class="comment">// STANDARD ATTESTATION CLAUSE ELEMENTS</span>
+
+<span class="key">PLACE:</span>     <span class="val">City/town where deed was signed</span>
+<span class="key">DATE:</span>      <span class="val">Day, month, year (written out in full — no numerals)</span>
+<span class="key">PARTIES:</span>  <span class="val">Full names + ID/passport numbers of signatories</span>
+<span class="key">WITNESSES:</span> <span class="val">Full names + addresses of both witnesses</span>
+<span class="key">STATEMENT:</span> <span class="val">"...who are personally known to me / whose identity has been established to my satisfaction..."</span>
+<span class="key">CAPACITY:</span> <span class="val">Confirmation parties appeared in their personal capacity / on behalf of company etc.</span>
+<span class="key">NOTARY:</span>   <span class="val">Full name, business address, admitted as Notary Public for [province]</span>
+<span class="key">SEAL:</span>     <span class="val">Impressed seal of the notary (physical impression on paper)</span>
+      </div>
+      <div class="alert alert-danger">
+        <span class="alert-icon">⚠️</span>
+        <div>Dates in notarial deeds must NEVER be left blank. An undated notarial deed is defective. Similarly, blanks in the body of the deed must never be left unfilled — rule them out or initial them.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🚫 Common Reasons Deeds are Rejected</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <ul class="body-list">
+            <li>Missing or illegible notarial seal</li>
+            <li>Undated attestation clause</li>
+            <li>Parties not adequately identified (no ID numbers)</li>
+            <li>Witness details missing</li>
+            <li>Unsigned pages or unsigned margin signatures</li>
+            <li>Erasures or alterations not initialled by all parties</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="body-list">
+            <li>Property description doesn't match Deeds Office records</li>
+            <li>Missing consent of mortgagee for registered encumbrance</li>
+            <li>Transfer duty receipts/exemptions not presented</li>
+            <li>Rates clearance certificate absent or expired</li>
+            <li>ANC executed in wrong jurisdiction</li>
+            <li>Missing copy of identity documents</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚖️ Ethical Duties — Conflicts of Interest</div>
+      <p class="body-text">A notary acts for the transaction, not for any party. You may not notarise a deed in which you have a personal or financial interest, or where a close family member is a party. If a dispute arises between parties after execution, you must remain neutral — you can be called to give evidence on the execution, but not on privileged advice.</p>
+      <div class="alert alert-warning">
+        <span class="alert-icon">📌</span>
+        <div>While notarial deeds become public once registered, your consultations and advice remain protected by attorney‑client privilege.</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Chapter 8: Practice & Procedure</div>
+</section>
+
+<!-- ════════════════════════════════════════ CHEAT SHEET -->
+<section class="section-page" id="cheatsheet">
+  <div class="section-hero" style="background:var(--navy);color:white;">
+    <p class="hero-tag" style="color:var(--gold-light);">Quick Reference</p>
+    <h1 class="hero-title" style="color:white;">The Ultimate<br>Cheat Sheet</h1>
+    <p class="hero-subtitle" style="color:rgba(255,255,255,0.6);">Every key rule, threshold, deadline, and distinction — on one page. Print it. Learn it. Live it.</p>
+  </div>
+  <div class="content-grid">
+    <div class="cheat-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-bottom:1.5rem;">
+      <div class="cheat-tile ct-navy">
+        <div class="ct-head">🔑 Notarial Formalities</div>
+        <div class="ct-item"><span class="ct-label">ANCs — exec before</span><span class="ct-val">Marriage</span></div>
+        <div class="ct-item"><span class="ct-label">ANC — registration</span><span class="ct-val">3 months</span></div>
+        <div class="ct-item"><span class="ct-label">Witnesses required</span><span class="ct-val">2 (all deeds)</span></div>
+        <div class="ct-item"><span class="ct-label">Seal required?</span><span class="ct-val">Always</span></div>
+        <div class="ct-item"><span class="ct-label">Protocol kept by</span><span class="ct-val">Notary (state's)</span></div>
+        <div class="ct-item"><span class="ct-label">Long lease trigger</span><span class="ct-val">&gt;10 years / lifetime</span></div>
+      </div>
+      <div class="cheat-tile ct-gold">
+        <div class="ct-head">💍 Matrimonial Regimes</div>
+        <div class="ct-item"><span class="ct-label">Default regime</span><span class="ct-val">In community</span></div>
+        <div class="ct-item"><span class="ct-label">Change via</span><span class="ct-val">Section 21 application</span></div>
+        <div class="ct-item"><span class="ct-label">Accrual formula</span><span class="ct-val">½ × (Accrual A − B)</span></div>
+        <div class="ct-item"><span class="ct-label">Commencement val</span><span class="ct-val">Must be in ANC</span></div>
+        <div class="ct-item"><span class="ct-label">Excluded from accrual</span><span class="ct-val">Inheritances, donations</span></div>
+        <div class="ct-item"><span class="ct-label">ANC void if</span><span class="ct-val">After marriage / no notary</span></div>
+      </div>
+      <div class="cheat-tile ct-coral">
+        <div class="ct-head">📦 Notarial Bonds</div>
+        <div class="ct-item"><span class="ct-label">SNB legislation</span><span class="ct-val">Act 57/1993</span></div>
+        <div class="ct-item"><span class="ct-label">GNB legislation</span><span class="ct-val">Deeds Reg Act 47/1937</span></div>
+        <div class="ct-item"><span class="ct-label">SNB creates</span><span class="ct-val">Real right (from reg)</span></div>
+        <div class="ct-item"><span class="ct-label">GNB creates</span><span class="ct-val">Preference only</span></div>
+        <div class="ct-item"><span class="ct-label">GNB becomes real</span><span class="ct-val">On attachment</span></div>
+        <div class="ct-item"><span class="ct-label">Notional possession</span><span class="ct-val">SNB only</span></div>
+      </div>
+      <div class="cheat-tile ct-sage">
+        <div class="ct-head">🏛️ Servitudes</div>
+        <div class="ct-item"><span class="ct-label">Praedial — benefits</span><span class="ct-val">Dominant land</span></div>
+        <div class="ct-item"><span class="ct-label">Personal — benefits</span><span class="ct-val">Specific person</span></div>
+        <div class="ct-item"><span class="ct-label">Usufruct rights</span><span class="ct-val">Use + fruits</span></div>
+        <div class="ct-item"><span class="ct-label">Usus rights</span><span class="ct-val">Use only</span></div>
+        <div class="ct-item"><span class="ct-label">Habitatio rights</span><span class="ct-val">Dwell only</span></div>
+        <div class="ct-item"><span class="ct-label">Prescription period</span><span class="ct-val">30 years</span></div>
+      </div>
+      <div class="cheat-tile ct-lav">
+        <div class="ct-head">🌐 Authentication</div>
+        <div class="ct-item"><span class="ct-label">SA joined Hague</span><span class="ct-val">5 Aug 2009</span></div>
+        <div class="ct-item"><span class="ct-label">Apostille issued by</span><span class="ct-val">DIRCO (Pretoria)</span></div>
+        <div class="ct-item"><span class="ct-label">Non-Hague countries</span><span class="ct-val">Full legalisation</span></div>
+        <div class="ct-item"><span class="ct-label">Cannot apostille</span><span class="ct-val">Diplomatic docs, customs</span></div>
+        <div class="ct-item"><span class="ct-label">Foreign POA in SA</span><span class="ct-val">Apostille/authenticate</span></div>
+        <div class="ct-item"><span class="ct-label">Translation required?</span><span class="ct-val">If not SA language</span></div>
+      </div>
+      <div class="cheat-tile ct-navy">
+        <div class="ct-head">⚖️ Key Legislation</div>
+        <div class="ct-item"><span class="ct-label">Notaries regulated by</span><span class="ct-val">Legal Practice Act 28/2014</span></div>
+        <div class="ct-item"><span class="ct-label">Deeds registration</span><span class="ct-val">Act 47/1937</span></div>
+        <div class="ct-item"><span class="ct-label">ANC legislation</span><span class="ct-val">Matrimonial Prop Act 88/1984</span></div>
+        <div class="ct-item"><span class="ct-label">Special Notarial Bond</span><span class="ct-val">Act 57/1993</span></div>
+        <div class="ct-item"><span class="ct-label">Land alienation</span><span class="ct-val">Alienation of Land Act 68/1981</span></div>
+        <div class="ct-item"><span class="ct-label">Hague Apostille</span><span class="ct-val">Convention 5 Oct 1961</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 The "NEVER FORGET" List — Top Exam Mistakes</div>
+      <div class="card-grid card-grid-2">
+        <div>
+          <div class="alert alert-danger"><span class="alert-icon">❌</span><div>ANC signed AFTER the wedding → <strong>VOID</strong> (not voidable)</div></div>
+          <div class="alert alert-danger"><span class="alert-icon">❌</span><div>Notarial deed without seal → <strong>NULL AND VOID</strong></div></div>
+          <div class="alert alert-danger"><span class="alert-icon">❌</span><div>GNB = real right from registration → <strong>WRONG</strong> — GNB only creates preference; real right comes on attachment</div></div>
+          <div class="alert alert-danger"><span class="alert-icon">❌</span><div>Usufruct is transferable → <strong>WRONG</strong> — it is personal and non-transferable</div></div>
+        </div>
+        <div>
+          <div class="alert alert-success"><span class="alert-icon">✅</span><div>SNB = real right from <strong>registration</strong> (no physical delivery needed — notional possession)</div></div>
+          <div class="alert alert-success"><span class="alert-icon">✅</span><div>Unregistered ANC is <strong>valid between parties</strong> but not against third parties</div></div>
+          <div class="alert alert-success"><span class="alert-icon">✅</span><div>SA joined Hague Convention in <strong>2009</strong> (signed 1961 Convention)</div></div>
+          <div class="alert alert-success"><span class="alert-icon">✅</span><div>A praedial servitude must benefit the <strong>land</strong>, not just the current owner personally</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 Hierarchy of Rights on Insolvency</div>
+      <ol class="steps">
+        <li><span class="step-num step-coral" style="background:#e05c3a;">1</span><span class="step-text"><strong>Secured creditors</strong> — Mortgage bondholders, SNB holders (real right in specific property)</span></li>
+        <li><span class="step-num step-gold">2</span><span class="step-text"><strong>Preferent creditors</strong> — SARS (tax), employees (certain claims), GNB holders (if attached or on sequestration)</span></li>
+        <li><span class="step-num step-sage">3</span><span class="step-text"><strong>Concurrent creditors</strong> — All other unsecured creditors (rank equally, paid pro rata from what remains)</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Quick Reference Cheat Sheet</div>
+</section>
+
+<!-- ════════════════════════════════════════ QUIZ -->
+<section class="section-page" id="quiz">
+  <div class="section-hero" style="background:linear-gradient(135deg,#1a2744 0%,#2d4070 100%);color:white;">
+    <p class="hero-tag" style="color:var(--gold-light);">Practice Questions</p>
+    <h1 class="hero-title" style="color:white;">Test Your Knowledge</h1>
+    <p class="hero-subtitle" style="color:rgba(255,255,255,0.6);">Click an option to see if you're right. Read the explanation. Move on stronger. 🦉</p>
+  </div>
+  <div class="content-grid">
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">1</span>Sipho and Naledi execute an Antenuptial Contract before a notary on Friday evening. They get married on Saturday morning. Sipho fails to register the ANC at the Deeds Office. What is the legal position?</div>
+      <ul class="quiz-options" id="q1">
+        <li onclick="answer('q1',0,false,'The ANC is void only because it was not registered within 3 months. Registration is a validity requirement.')">A) The ANC is void — unregistered ANCs have no legal effect</li>
+        <li onclick="answer('q1',1,true,'Correct! The ANC is valid between Sipho and Naledi from the date of execution. Failure to register means it is not binding on third parties, but inter partes it is fully enforceable.')">B) The ANC is valid between the parties but cannot be enforced against third parties</li>
+        <li onclick="answer('q1',2,false,'Being voidable is different from being unenforceable against third parties. The distinction matters — voidable means a party can set it aside; this ANC is valid but simply not registered.')">C) The ANC is voidable at the election of either party</li>
+        <li onclick="answer('q1',3,false,'The ANC was executed BEFORE the marriage, so it meets that fundamental requirement. The issue is only registration.')">D) The ANC is void because it was not executed before the marriage</li>
+      </ul>
+      <div class="quiz-reveal" id="r1"></div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">2</span>Standard Bank passes a notarial bond over "all the movable assets of Zulu Manufacturers (Pty) Ltd." The bond is registered at the Deeds Office. Before Zulu Manufacturers is liquidated, Standard Bank does NOT attach any assets. What is Standard Bank's status in the liquidation?</div>
+      <ul class="quiz-options" id="q2">
+        <li onclick="answer('q2',0,false,'Standard Bank does not have a real right over specific assets without attachment. A GNB without attachment only creates preference, not full security.')">A) Fully secured creditor — ranking above all other creditors</li>
+        <li onclick="answer('q2',1,true,'Correct! A General Notarial Bond without prior attachment creates only preference, not a real right. Standard Bank ranks above concurrent creditors but below fully secured creditors.')">B) Preferent creditor — ranking above concurrent but below secured creditors</li>
+        <li onclick="answer('q2',2,false,'Registration of the GNB does give Standard Bank a benefit — just not a real right. They are at least preferent.')">C) Concurrent creditor — the GNB registration gives no advantage</li>
+        <li onclick="answer('q2',3,false,'A GNB over "all movables" is precisely a General Notarial Bond. For it to create a real right without liquidation, attachment by the sheriff would have been necessary.')">D) Secured creditor — because the bond was registered before liquidation</li>
+      </ul>
+      <div class="quiz-reveal" id="r2"></div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">3</span>A notarial deed is executed but the notary forgets to impress their official seal on the document. The deed is lodged at the Deeds Office without the seal. What is the legal consequence?</div>
+      <ul class="quiz-options" id="q3">
+        <li onclick="answer('q3',0,false,'The absence of a seal is not merely irregular — it is fatal to the validity of the deed.')">A) The deed is irregular but valid — the notary can add the seal later</li>
+        <li onclick="answer('q3',1,false,'The Deeds Office would reject the deed, but the legal reason is not merely procedural — the deed itself is void.')">B) The Deeds Office will reject the deed but it can be resubmitted with the seal</li>
+        <li onclick="answer('q3',2,true,'Correct! A notarial deed without the notary\'s official seal is null and void. The seal is an essential element of execution. The deed cannot be "healed" — a new deed must be executed.')">C) The deed is null and void — the seal is an essential requirement of validity</li>
+        <li onclick="answer('q3',3,false,'The notary faces disciplinary consequences, but the primary legal issue is the validity of the deed, which is void.')">D) The deed is valid but the notary faces disciplinary action</li>
+      </ul>
+      <div class="quiz-reveal" id="r3"></div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">4</span>Miriam holds a usufruct over her late husband's farm. She wants to give the usufruct to her daughter so she can farm the land. Can she do this?</div>
+      <ul class="quiz-options" id="q4">
+        <li onclick="answer('q4',0,false,'The usufruct cannot be transferred at all — but Miriam can let the land to her daughter as a lessee, allowing her daughter to use the farm.')">A) Yes — Miriam can transfer the usufruct by notarial deed</li>
+        <li onclick="answer('q4',1,false,'Inheritance is not a route either — a personal servitude terminates on death and does not form part of the estate.')">B) Yes — the usufruct will pass to the daughter on Miriam's death</li>
+        <li onclick="answer('q4',2,false,'While Miriam can exercise the usufruct through others (e.g., by leasing), she cannot transfer the legal right itself.')">C) No — but Miriam can lease the farm to her daughter, allowing the daughter to use it</li>
+        <li onclick="answer('q4',3,true,'Correct! A personal servitude like usufruct is strictly personal and inalienable. Miriam cannot transfer it. However, she CAN lease the farm to her daughter, allowing her daughter to exercise the farming rights under Miriam\'s usufruct — the usufruct remains with Miriam.')">D) No — a usufruct is personal and non-transferable; but Miriam can lease to her daughter as an exercise of her usufructuary rights</li>
+      </ul>
+      <div class="quiz-reveal" id="r4"></div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">5</span>South Africa joined the Hague Convention on the Apostille in which year?</div>
+      <ul class="quiz-options" id="q5">
+        <li onclick="answer('q5',0,false,'1961 was when the Hague Convention itself was opened for signature — SA did not join then.')">A) 1961</li>
+        <li onclick="answer('q5',1,false,'Not 1994, though this date is significant in SA history for other reasons.')">B) 1994</li>
+        <li onclick="answer('q5',2,true,'Correct! South Africa acceded to the Hague Apostille Convention and it took effect on 5 August 2009. This is a frequently tested date.')">C) 2009</li>
+        <li onclick="answer('q5',3,false,'2015 is not the correct date for SA\'s accession to the Apostille Convention.')">D) 2015</li>
+      </ul>
+      <div class="quiz-reveal" id="r5"></div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">6</span>A married couple married out of community of property with the accrual system. At the time of the ANC, Spouse A declared a commencement value of R0 and Spouse B declared R200,000. At dissolution of the marriage, Spouse A's estate is worth R800,000 and Spouse B's estate is worth R500,000. What is Spouse B's accrual claim?</div>
+      <ul class="quiz-options" id="q6">
+        <li onclick="answer('q6',0,false,'Work through the formula: Accrual A = 800,000 − 0 = 800,000. Accrual B = 500,000 − 200,000 = 300,000. Difference = 500,000. Claim = 250,000.')">A) R300,000</li>
+        <li onclick="answer('q6',1,true,'Correct! Accrual A = R800,000 − R0 = R800,000. Accrual B = R500,000 − R200,000 = R300,000. Difference = R500,000. Spouse B (smaller accrual) claims ½ × R500,000 = R250,000 from Spouse A.')">B) R250,000</li>
+        <li onclick="answer('q6',2,false,'R400,000 would be half of Spouse A\'s accrual only — you need to take into account Spouse B\'s own accrual too.')">C) R400,000</li>
+        <li onclick="answer('q6',3,false,'There is an accrual claim — Spouse A\'s estate grew much more than Spouse B\'s, so Spouse B has a valid claim.')">D) No claim — both spouses had accrual</li>
+      </ul>
+      <div class="quiz-reveal" id="r6"></div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">7</span>A lease is concluded for a period of 8 years, with an option for the lessee to renew for a further 5 years at their election. Must the lease be notarially executed?</div>
+      <ul class="quiz-options" id="q7">
+        <li onclick="answer('q7',0,false,'The POTENTIAL total period (8+5 = 13 years) exceeds 10 years, which triggers the notarial requirement — even though the initial period is under 10 years.')">A) No — the initial period of 8 years is less than 10 years</li>
+        <li onclick="answer('q7',1,true,'Correct! The lease is potentially for 13 years (8+5), which exceeds the 10-year threshold. A lease must be notarially executed where the total potential period, including renewal options at the lessee\'s election, can exceed 10 years.')">B) Yes — because the total potential period including the renewal option exceeds 10 years</li>
+        <li onclick="answer('q7',2,false,'Notarial execution is not optional here — if the potential period exceeds 10 years, notarial execution is required by law.')">C) Only if the lessee actually exercises the option to renew</li>
+        <li onclick="answer('q7',3,false,'Commercial leases are not exempt from the notarial requirement — the nature of the lease (residential vs commercial) does not change the 10-year rule.')">D) No — commercial leases are exempt from notarial requirements</li>
+      </ul>
+      <div class="quiz-reveal" id="r7"></div>
+    </div>
+
+    <!-- New question 8: Servitude by prescription -->
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">8</span>Thabo has used a pathway across his neighbour's land for 32 years, openly and without force, believing he had a right to do so. The neighbour now wants to fence off the land. Can Thabo claim a servitude?</div>
+      <ul class="quiz-options" id="q8">
+        <li onclick="answer('q8',0,false,'Prescription does not require a notarial deed. Thirty years of uninterrupted use can create a praedial servitude by operation of law.')">A) No — only a notarial deed can create a servitude</li>
+        <li onclick="answer('q8',1,true,'Correct! A praedial servitude of right of way can be acquired by prescription after 30 years of use, openly and as of right.')">B) Yes — he has acquired a servitude by prescription (30 years)</li>
+        <li onclick="answer('q8',2,false,'The period for acquiring a real right by prescription is 30 years, not 20.')">C) Yes — after 20 years of continuous use</li>
+        <li onclick="answer('q8',3,false,'Even if the use was without permission, it may still be "as of right" if it was not by force or stealth. The key is open, uninterrupted, and nec vi, nec clam, nec precario.')">D) No — because he used it without permission</li>
+      </ul>
+      <div class="quiz-reveal" id="r8"></div>
+    </div>
+
+    <!-- New question 9: Notarial protocol on death -->
+    <div class="quiz-card">
+      <div class="quiz-q"><span class="q-num">9</span>A notary dies unexpectedly. What must happen to his protocol (register of notarial deeds)?</div>
+      <ul class="quiz-options" id="q9">
+        <li onclick="answer('q9',0,false,'The protocol is not the notary\'s personal property; it belongs to the state and must be handed to the Master.')">A) It becomes the property of his heirs</li>
+        <li onclick="answer('q9',1,false,'While the Law Society (now Legal Practice Council) may be informed, the formal custodian is the Master of the High Court.')">B) It is kept by the notary's partner or firm</li>
+        <li onclick="answer('q9',2,true,'Correct! On the death of a notary, the protocol must be handed to the Master of the High Court, who may allow another notary to inspect or take custody.')">C) It must be handed to the Master of the High Court</li>
+        <li onclick="answer('q9',3,false,'The Deeds Office does not take custody of protocols; they belong to the notary\'s office but are state property and go to the Master.')">D) It is lodged at the Deeds Office</li>
+      </ul>
+      <div class="quiz-reveal" id="r9"></div>
+    </div>
+
+    <div style="text-align:center;padding:2rem;background:var(--warm-white);border-radius:16px;box-shadow:var(--card-shadow);">
+      <span style="font-size:3rem;">🦉</span>
+      <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin:0.75rem 0 0.5rem;">You've reached the end!</p>
+      <p style="color:var(--muted);font-size:0.9rem;max-width:400px;margin:0 auto 1.5rem;">Review any sections you found tricky, then come back for the practice questions again. You've got this, Notary.</p>
+      <button onclick="showSection('cheatsheet')" style="background:var(--navy);color:white;border:none;padding:12px 28px;border-radius:30px;font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;margin-right:8px;">Review Cheat Sheet</button>
+      <button onclick="showSection('cover')" style="background:var(--gold);color:white;border:none;padding:12px 28px;border-radius:30px;font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;">Back to Start</button>
+    </div>
+  </div>
+  <div class="section-footer">The Notary's Companion · Practice Questions</div>
+</section>
+
+</div><!-- /main-content -->
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section-page').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  const sectionMap = {cover:0,intro:1,anc:2,bonds:3,leases:4,servitudes:5,poa:6,auth:7,procedure:8,cheatsheet:9,quiz:10};
+  const buttons = document.querySelectorAll('.nav-links button');
+  if(sectionMap[id] !== undefined) buttons[sectionMap[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function answer(qId, idx, correct, explanation) {
+  const ul = document.getElementById(qId);
+  if(ul.dataset.answered) return;
+  ul.dataset.answered = 'true';
+  const items = ul.querySelectorAll('li');
+  items[idx].classList.add(correct ? 'correct' : 'wrong');
+  if(!correct) {
+    items.forEach((li,i) => {
+      const text = li.getAttribute('onclick');
+      if(text && text.includes('true')) li.classList.add('correct');
+    });
+  }
+  const revealId = 'r' + qId.substring(1);
+  const reveal = document.getElementById(revealId);
+  reveal.innerHTML = (correct ? '✅ ' : '❌ ') + explanation;
+  reveal.classList.add('show');
+}
+
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  document.getElementById('pbar').style.width = progress + '%';
+  document.getElementById('scrollTop').style.display = scrollTop > 300 ? 'flex' : 'none';
+});
+
+document.getElementById('scrollTop').style.display = 'none';
+</script>
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+/* Close mobile menu after selecting section */
+const originalShowSection = showSection;
+showSection = function(sectionId) {
+  originalShowSection(sectionId);
+  const nav = document.getElementById("navLinks");
+  if (nav) nav.classList.remove("show");
+}
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
+
+<script>
+/* ─────────────────────────────────────────────
+   DEMO MODE CONFIG
+   ───────────────────────────────────────────── */
+
+const DEMO_MODE = true;  
+
+
+/* ─────────────────────────────────────────────
+   PRODUCT LINKS CONFIGURATION
+   ───────────────────────────────────────────── */
+
+const PRODUCTS = {
+  mini: {
+    paystack: "https://paystack.com/buy/6-week-notary-exam-pack-bltcwx",
+    gumroad: "https://noobiwan.gumroad.com/l/mksdwb"
+  },
+  complete: {
+    paystack: "https://paystack.com/buy/6-week-notary-exam-mastery-complete-pack-pdf--web-app-tlxopv",
+    gumroad: "https://noobiwan.gumroad.com/l/aiefzy"
+  }
+};;
+
+// What remains fully accessible in demo
+const DEMO_OPEN_SECTIONS = new Set(["cover", "intro", "anc"]);
+
+// Where Chapter 2 demo stops (we lock from this element onwards)
+const ANC_DEMO_CUTOFF_SELECTOR = ".accrual-visual"; // locks everything after "The Accrual Formula" block
+
+
+/* ─────────────────────────────────────────────
+   HELPERS
+   ───────────────────────────────────────────── */
+
+function uniq(arr) {
+  return Array.from(new Set(arr.filter(Boolean)));
+}
+
+function extractHeadingsFromSection(sectionEl) {
+  // We keep it conservative: hero title + card titles + key sub headings
+  const headings = [];
+
+  const hero = sectionEl.querySelector(".hero-title");
+  if (hero) headings.push(hero.textContent.replace(/\s+/g, " ").trim());
+
+  sectionEl.querySelectorAll(".card-title").forEach(el => {
+    headings.push(el.textContent.replace(/\s+/g, " ").trim());
+  });
+
+  sectionEl.querySelectorAll("h3.sub").forEach(el => {
+    headings.push(el.textContent.replace(/\s+/g, " ").trim());
+  });
+
+  return uniq(headings).slice(0, 18); // avoid huge lists
+}
+
+function buildLockedOverlayHTML(opts) {
+  const {
+    title = "Unlock the Full Version",
+    message = "This content is part of the full Notary’s Companion.",
+    headings = []
+  } = opts || {};
+
+  const listItems = headings.length
+    ? headings.map(h => `<li><strong>•</strong> ${escapeHtml(h)}</li>`).join("")
+    : `<li><strong>•</strong> Full chapter content</li>`;
+
+  return `
+    <div class="locked-message">
+      <h3>${escapeHtml(title)}</h3>
+      <p>${escapeHtml(message)}</p>
+
+<div class="locked-actions">
+
+  <a class="buy-btn buy-btn-gumroad"
+     href="${PRODUCTS.complete.gumroad}"
+     target="_blank">
+     Unlock COMPLETE (Gumroad)
+  </a>
+
+  <a class="buy-btn buy-btn-paystack"
+     href="${PRODUCTS.complete.paystack}"
+     target="_blank">
+     Unlock COMPLETE (Paystack)
+  </a>
+
+  <a class="buy-btn buy-btn-paystack"
+     href="${PRODUCTS.mini.paystack}"
+     target="_blank"
+     style="background: rgba(255,255,255,0.08);">
+     Mini Pack (PDF Only)
+  </a>
+
+</div>
+
+      <div class="missing-outline">
+        <div class="mo-title">Included in Full Version</div>
+        <ul>${listItems}</ul>
+      </div>
+    </div>
+  `;
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+
+/* ─────────────────────────────────────────────
+   DEMO LOCKING LOGIC
+   ───────────────────────────────────────────── */
+
+function lockWholeSection(sectionId) {
+  const sectionEl = document.getElementById(sectionId);
+  if (!sectionEl) return;
+
+  // Keep the hero visible, but lock the rest
+  const hero = sectionEl.querySelector(".section-hero");
+  const content = sectionEl.querySelector(".content-grid");
+
+  const headings = extractHeadingsFromSection(sectionEl);
+
+  if (content) {
+    const overlay = document.createElement("div");
+    overlay.className = "locked-overlay";
+
+    const blurWrap = document.createElement("div");
+    blurWrap.className = "locked-blur";
+
+    // Put a small teaser (optional): show first 1-2 cards blurred (if they exist)
+    const teaserCards = Array.from(content.children).slice(0, 2);
+    if (teaserCards.length) {
+      teaserCards.forEach(node => blurWrap.appendChild(node.cloneNode(true)));
+    } else {
+      // fallback blur content
+      blurWrap.innerHTML = `<div class="card"><div class="card-title">🔒 Locked Chapter</div><p class="body-text">Preview available in the full version.</p></div>`;
+    }
+
+    overlay.appendChild(blurWrap);
+
+    const overlayHtml = buildLockedOverlayHTML({
+      title: "This Chapter is Locked in the Demo",
+      message: "You’re viewing the demo. Get the full version to unlock this chapter and the complete exam system.",
+      headings
+    });
+
+    overlay.insertAdjacentHTML("beforeend", overlayHtml);
+
+    // Replace full content with locked overlay
+    content.innerHTML = "";
+    content.appendChild(overlay);
+  }
+
+  // Add a small footer note (optional)
+  const footer = sectionEl.querySelector(".section-footer");
+  if (footer) {
+    footer.innerHTML = footer.innerHTML + " · Demo Version";
+  }
+}
+
+function lockAncAfterCutoff() {
+  const anc = document.getElementById("anc");
+  if (!anc) return;
+
+  const grid = anc.querySelector(".content-grid");
+  if (!grid) return;
+
+  const cutoff = anc.querySelector(ANC_DEMO_CUTOFF_SELECTOR);
+  if (!cutoff) {
+    // If selector not found, we fail safe: don't lock ANC
+    return;
+  }
+
+  // Collect nodes from cutoff to end
+  const children = Array.from(grid.children);
+  const startIndex = children.indexOf(cutoff);
+  if (startIndex < 0) return;
+
+  const nodesToLock = children.slice(startIndex);
+
+  // Extract headings specifically from the locked part for the teaser list
+  const tempWrap = document.createElement("div");
+  nodesToLock.forEach(n => tempWrap.appendChild(n.cloneNode(true)));
+  const lockedHeadings = uniq([
+    ...Array.from(tempWrap.querySelectorAll(".card-title")).map(el => el.textContent.trim()),
+    ...Array.from(tempWrap.querySelectorAll("h3.sub")).map(el => el.textContent.trim())
+  ]).slice(0, 16);
+
+  // Build overlay container
+  const overlay = document.createElement("div");
+  overlay.className = "locked-overlay";
+
+  // Blur wrap contains the real locked nodes (moved, not cloned)
+  const blurWrap = document.createElement("div");
+  blurWrap.className = "locked-blur";
+
+  nodesToLock.forEach(n => blurWrap.appendChild(n)); // move into blurWrap
+  overlay.appendChild(blurWrap);
+
+  overlay.insertAdjacentHTML("beforeend", buildLockedOverlayHTML({
+    title: "Unlock the Rest of Chapter 2",
+    message: "You’ve reached the end of the demo portion. The full version contains the complete ANC mastery section and exam traps.",
+    headings: lockedHeadings.length ? lockedHeadings : ["Accrual deep dive", "Registration edge cases", "Exam traps & scenarios"]
+  }));
+
+  // Put overlay back into the grid at the cutoff position
+  grid.appendChild(overlay);
+}
+
+function applyDemoMode() {
+  if (!DEMO_MODE) return;
+
+  // Lock every section except the open set
+  document.querySelectorAll(".section-page").forEach(sec => {
+    const id = sec.id;
+    if (!id) return;
+
+    // cover + intro + anc remain accessible (with partial lock for anc)
+    if (DEMO_OPEN_SECTIONS.has(id)) return;
+
+    lockWholeSection(id);
+  });
+
+  // Partial lock for ANC (after the Accrual formula block)
+  lockAncAfterCutoff();
+}
+
+
+/* ─────────────────────────────────────────────
+   SAFE WRAP EXISTING showSection()
+   ───────────────────────────────────────────── */
+
+(function() {
+  // If showSection doesn’t exist for some reason, don’t break the page
+  if (typeof window.showSection !== "function") return;
+
+  const originalShowSection = window.showSection;
+
+  window.showSection = function(sectionId) {
+    // In demo mode, we allow navigation to locked sections (they’ll show the teaser/CTA)
+    originalShowSection(sectionId);
+
+    // Sync active nav state
+    document.querySelectorAll(".nav-links button").forEach(btn => {
+      btn.classList.remove("active");
+      if ((btn.getAttribute("onclick") || "").includes(sectionId)) btn.classList.add("active");
+    });
+
+    // Close mobile menu if present
+    const nav = document.getElementById("navLinks");
+    if (nav) nav.classList.remove("show");
+
+    // Always scroll to top for clean "app" feel
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+})();
+
+// Run demo locking after DOM is ready
+document.addEventListener("DOMContentLoaded", applyDemoMode);
+</script>
+</body>
+</html>
